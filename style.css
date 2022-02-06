@@ -14,8 +14,8 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: 20vw 80vw;
-  grid-template-rows: min-content auto;
+  grid-template-columns: 280px calc(100vw - 280px);
+  grid-template-rows: max-content 1fr;
   width: 100vw;
   margin: 0;
   font-size: 14px;
@@ -89,11 +89,12 @@ header {
   grid-template-rows: repeat(2, min-content);
   gap: 32px;
   padding: 16px 48px;
-  font-weight: 600;
+  font-weight: 700;
   width: 100%;
   height: fit-content;
   justify-content: space-between;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 .search-container {
@@ -195,4 +196,132 @@ header {
 main {
   grid-column: 2;
   grid-row: 2;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  padding: 24px;
+  background-color: #f8fafc;
+  gap: 24px;
+}
+
+section > h3, section h4 {
+  font-weight: 600;
+  margin: 0;
+}
+
+section > h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+section.projects {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.projects h4 {
+  font-size: 1rem;
+}
+
+.projects-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.project-cards {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  border-left: 8px solid gray;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.project-cards p {
+  color: hsl(0, 0%, 40%);
+}
+
+.project-icons {
+  display: flex;
+  gap: 16px;
+  justify-self: end;
+}
+
+.icon-1, .icon-2, .icon-3 {
+  width: 25px;
+  height: 25px;
+  background-color: gray;
+}
+
+section.announcements {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.announcements-container {
+  background-color: white;
+  width: 300px;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+}
+
+.announcements-container hr {
+  border: 1px solid hsl(0, 0%, 90%);
+  margin: 16px 0;
+}
+
+.announcements-container p {
+  margin: 8px 0 0 0;
+  color: hsl(0, 0%, 40%);
+}
+
+section.trending {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.trending-card {
+  display: grid;
+  grid-template-rows: repeat(4, min-content);
+  padding: 24px 32px;
+  width: 300px;
+  background-color: white;
+  gap: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+}
+
+.trending-accounts {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+}
+
+.trending-acc-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gray;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  margin-right: 16px;
+}
+
+.trending-acc-name {
+  font-weight: 600;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.trending-acc-project {
+  grid-column: 2;
+  grid-row: 2;
+  color: hsl(0, 0%, 40%);
 }
