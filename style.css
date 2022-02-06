@@ -13,10 +13,11 @@ html {
 }
 
 body {
-  display: grid;
-  grid-template-columns: 280px calc(100vw - 280px);
-  grid-template-rows: max-content 1fr;
   width: 100vw;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: max-content 1fr;
   margin: 0;
   font-size: 14px;
   font-family: 'Source Sans Pro', sans-serif;;
@@ -196,9 +197,9 @@ header {
 main {
   grid-column: 2;
   grid-row: 2;
-  width: 100%;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr min-content;
   grid-template-rows: repeat(2, 1fr);
   padding: 24px;
   background-color: #f8fafc;
@@ -206,7 +207,7 @@ main {
 }
 
 section > h3, section h4 {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -221,7 +222,7 @@ section.projects {
 }
 
 .projects h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .projects-container {
@@ -246,6 +247,7 @@ section.projects {
 
 .project-cards p {
   color: hsl(0, 0%, 40%);
+  margin: 8px 0;
 }
 
 .project-icons {
@@ -271,6 +273,10 @@ section.announcements {
   padding: 32px;
   border-radius: 8px;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+}
+
+.announcements-container h4 {
+  font-size: 1rem;
 }
 
 .announcements-container hr {
