@@ -1,7 +1,7 @@
 # Admin Dashboard Demo
  
 Tools :
-- HTML
+- HTML5
 - CSS Grid
 - CSS Flexbox
 - Material Icons
